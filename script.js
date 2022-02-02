@@ -76,7 +76,7 @@ function game() {
     let outcome = "";
     for(let i = 0; i < 5; i++) {
         outcome = playRound(playerPlay(), computerPlay());
-        outcomeLetter = outcome.substring(4, 5);
+        outcomeLetter = outcome.substring(4, 5); // Get first letter of Win, Lose, or Tie
         switch(outcomeLetter) {
             case "W":
                 playerScore += 1;
