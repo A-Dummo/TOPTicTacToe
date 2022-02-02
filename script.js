@@ -69,3 +69,30 @@ function playRound(playerSelection, computerSelection) {
             return "You Tie! Scissors ties Scissors";
     }
 }
+
+function game() {
+    let playerScore   = 0;
+    let computerScore = 0;
+    let outcome = "";
+    for(let i = 0; i < 5; i++) {
+        outcome = playRound(playerPlay(), computerPlay());
+        outcomeLetter = outcome.substring(4, 5);
+        switch(outcomeLetter) {
+            case "W":
+                playerScore += 1;
+                break;
+
+            case "L":
+                computerScore += 1;
+                break;
+            
+            case "T":
+                playerScore += 1;
+                computerScore += 1;
+                break;
+        }
+        console.log(`playerScore: ${playerScore}\ncomputerScore: ${computerScore}\n${outcome}`)
+    }
+}
+
+game()
