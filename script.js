@@ -93,6 +93,13 @@ function game() {
         }
         console.log(`playerScore: ${playerScore}\ncomputerScore: ${computerScore}\n${outcome}`)
     }
+    if (playerScore > computerScore) {
+        console.log("Player wins!")
+    } else if (playerScore == computerScore) {
+        console.log("Both tie!")
+    } else {
+        console.log("Computer wins!")
+    }
 }
 
 game()
