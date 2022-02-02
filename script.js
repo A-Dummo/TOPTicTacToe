@@ -14,3 +14,16 @@ function computerPlay() {
             return "None";
     }
 }
+
+function playerPlay() {
+    let playerInput = "";
+    while(playerInput != "rock" && playerInput != "paper" && playerInput != "scissors") {
+        playerInput = prompt("Type 'Rock', 'Paper', or 'Scissors'");
+        playerInput = playerInput.toLowerCase();
+    }
+    return playerInput;
+}
+
+function playRound(playerInput, computerInput) {
+    /*inputCompare(playerInput, computerInput);*/
+}
