@@ -69,7 +69,7 @@ function playRound(playerSelection, computerSelection) {
             return "You Tie! Scissors ties Scissors";
     }
 }
-
+/*
 function game() {
     let playerScore   = 0;
     let computerScore = 0;
@@ -103,3 +103,12 @@ function game() {
 }
 
 game()
+*/
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener('click', () => {playRound('rock', computerPlay())});
+paper.addEventListener('click', () => {playRound('paper', computerPlay())});
+scissors.addEventListener('click', () => {playRound('scissors', computerPlay())});
