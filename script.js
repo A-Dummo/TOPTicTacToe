@@ -108,7 +108,50 @@ game()
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+const results = document.querySelector("#results");
+let pScore = 0;
+let cScore = 0;
+let completed = false;
 
-rock.addEventListener('click', () => {playRound('rock', computerPlay())});
-paper.addEventListener('click', () => {playRound('paper', computerPlay())});
-scissors.addEventListener('click', () => {playRound('scissors', computerPlay())});
+function game(playerSelection, playerScore, computerScore) {
+    
+    if (completed === true) return;
+
+    outcome = playRound(playerSelection, computerPlay());
+    outcomeLetter = outcome.substring(4, 5); // Get first letter of Win, Lose, or Tie
+    switch(outcomeLetter) {
+        case "W":
+            playerScore += 1;
+            break;
+         case "L":
+            computerScore += 1;
+            break;
+        
+        case "T":
+            //pScore += 0;
+            //cScore += 0;
+            break;
+    }
+  
+    if (playerScore === 5) {
+        results.innerHTML += "Winner: Player";
+        completed = true;
+        return;
+    } else if (computerScore === 5) {
+        results.innerHTML += "Winner: Computer";
+        completed = true;
+        return;
+    }
+    
+    results.innerHTML = `Player Score: ${playerScore}<br>Computer Score: ${computerScore}<br>`
+
+    pScore = playerScore;
+    cScore = computerScore;
+
+    console.log(pScore, cScore);
+}
+
+rock.addEventListener('click', () => {game('rock', pScore, cScore)});
+paper.addEventListener('click', () => {game('rock', pScore, cScore)});
+scissors.addEventListener('click', () => {game('rock', pScore, cScore)});
+
